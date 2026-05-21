@@ -158,21 +158,27 @@
 
     /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 16px; left: 50%; z-index: 1000;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1200px;
       padding: 0 24px;
-      background: transparent;
-      transition: background 0.3s ease, border-bottom 0.3s ease;
+      background: rgba(13,14,16,0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
     nav.scrolled {
-      background: rgba(13,14,16,0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(13,14,16,0.92);
+      border-color: rgba(255,255,255,0.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     }
     .nav-inner {
-      max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
+      height: 64px;
     }
     .nav-logo {
       display: flex; align-items: center; gap: 12px;
@@ -239,10 +245,12 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .mobile-menu {
-      display: none; position: fixed; top: 72px; left: 0; right: 0;
-      background: rgba(10,10,11,0.97); backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.06); padding: 24px;
+      display: none; position: fixed; top: 96px; left: 24px; right: 24px;
+      background: rgba(13,14,16,0.97); backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 24px;
       flex-direction: column; gap: 20px; z-index: 999;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
@@ -266,7 +274,7 @@
     }
     .hero-content {
       position: relative; z-index: 1;
-      padding-top: 130px; padding-bottom: 60px;
+      padding-top: 148px; padding-bottom: 60px;
       max-width: 800px;
     }
     .hero-eyebrow {
