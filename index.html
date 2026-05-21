@@ -418,8 +418,52 @@
       line-height: 1; pointer-events: none;
     }
 
+    /* HOW IT WORKS */
+    .how { background: var(--black); }
+    .how-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .how-step {
+      background: var(--carbon); padding: 40px 28px;
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; text-align: center;
+      transition: all 0.3s ease;
+    }
+    .how-step:hover { background: var(--surface); transform: translateY(-4px); }
+    .how-step::after {
+      content: ''; position: absolute; top: 50%; right: -1px;
+      width: 1px; height: 40%; background: rgba(232,67,26,0.3);
+      transform: translateY(-50%);
+    }
+    .how-step:last-child::after { display: none; }
+    .how-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    }
+    .how-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(232,67,26,0.1); border: 1px solid rgba(232,67,26,0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; color: var(--accent);
+    }
+    .how-icon svg { width: 26px; height: 26px; }
+    .how-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 12px; color: var(--white);
+    }
+    .how-desc { font-size: 14px; color: var(--metal); line-height: 1.7; }
+    @media (max-width: 768px) {
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .how-step::after { display: none; }
+    }
+    @media (max-width: 480px) {
+      .how-grid { grid-template-columns: 1fr; }
+    }
+
     /* WHY US */
-    .why { background: var(--black); }
+    .why { background: var(--dark); }
     .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .stat-box {
@@ -847,6 +891,52 @@
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
         <div class="service-title">Instalaciones Varias</div>
         <p class="service-desc">Aires acondicionados, muebles, estructuras, cielos rasos, divisiones y cualquier instalación que necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="proceso">
+  <div class="container">
+    <div class="how-header reveal" style="text-align:center; margin-bottom:64px;">
+      <div class="tag">Simple y sin complicaciones</div>
+      <h2 class="section-title">Cómo <span>funciona</span></h2>
+      <div class="divider-line center"></div>
+      <p class="section-sub" style="margin:16px auto 0;">De la llamada al trabajo terminado en cuatro pasos. Sin sorpresas, sin letra pequeña.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-num">01</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 10.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92v2z"/></svg>
+        </div>
+        <h3 class="how-title">Nos contacta</h3>
+        <p class="how-desc">Llame o escriba por WhatsApp. Cuéntenos qué necesita y en qué zona está. Respondemos en menos de 1 hora.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">02</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <h3 class="how-title">Cotización gratis</h3>
+        <p class="how-desc">Le enviamos un presupuesto claro y detallado. Sin visita obligatoria para trabajos menores. Sin compromisos.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">03</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <h3 class="how-title">Hacemos el trabajo</h3>
+        <p class="how-desc">Llegamos en la fecha acordada, trabajamos con orden y precisión. Dejamos el espacio limpio al terminar.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">04</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        </div>
+        <h3 class="how-title">Garantía incluida</h3>
+        <p class="how-desc">Si algo no queda como se acordó, volvemos y lo corregimos sin costo adicional. Así de simple.</p>
       </div>
     </div>
   </div>
