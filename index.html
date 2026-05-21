@@ -611,6 +611,30 @@
     }
     .testi-role { font-size: 12px; color: var(--metal); text-transform: uppercase; letter-spacing: 1px; }
 
+    /* FAQ */
+    .faq { background: var(--black); }
+    .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { border: 1px solid rgba(255,255,255,0.06); background: var(--carbon); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 22px 28px; background: none; border: none;
+      color: var(--white); font-family: 'Barlow', sans-serif;
+      font-size: 16px; font-weight: 600; text-align: left; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-arrow { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.3s ease; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 28px 22px; }
+    .faq-a p { font-size: 15px; color: var(--metal); line-height: 1.75; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; }
+    .faq-item.open { border-color: rgba(232,67,26,0.2); }
+    .faq-item.open .faq-q { color: var(--accent); }
+
     /* CTA BAND */
     .cta-band {
       background: var(--dark); border-top: 1px solid rgba(255,255,255,0.06);
@@ -1221,6 +1245,61 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal" style="text-align:center; margin-bottom:56px;">
+      <div class="tag">Preguntas frecuentes</div>
+      <h2 class="section-title">Resolvemos sus <span>dudas</span></h2>
+      <div class="divider-line center"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Cobran por venir a revisar el problema?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>La evaluación inicial es completamente gratuita y sin compromiso. Llegamos, revisamos, y le damos un presupuesto claro antes de empezar cualquier trabajo.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Qué pasa si el trabajo no queda como se acordó?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Todos nuestros trabajos tienen garantía de 30 días en mano de obra. Si algo no queda bien, volvemos y lo corregimos sin costo adicional. Su satisfacción es nuestra prioridad.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Cuánto tiempo tarda en llegar la cotización?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Para trabajos menores, enviamos el presupuesto por WhatsApp en menos de 1 hora. Para proyectos mayores que requieren visita, coordinamos una visita de evaluación dentro del día.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Los materiales los compran ustedes o yo?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Ambas opciones funcionan. Si prefiere, nosotros conseguimos los materiales al mejor precio y le cobramos solo el costo real. O si ya los tiene, solo le cobramos la mano de obra. Usted decide.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Trabajan fines de semana?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Atendemos de lunes a sábado de 7am a 7pm. Para emergencias fuera de horario, escríbanos por WhatsApp y hacemos lo posible por atenderle.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿En qué zonas atienden?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Cubrimos todo el Gran Área Metropolitana: San José, Heredia, Alajuela, Cartago, Escazú, Desamparados, Moravia, Curridabat, La Unión, Santa Ana y zonas aledañas. Si tiene duda sobre su zona, escríbanos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="container">
@@ -1405,6 +1484,16 @@
     ham.classList.remove('open');
     mob.classList.remove('open');
   }
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 
   // SCROLL REVEAL
   const observer = new IntersectionObserver((entries) => {
