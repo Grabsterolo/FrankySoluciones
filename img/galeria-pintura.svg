@@ -38,7 +38,4 @@
   <rect x="388" y="155" width="12" height="55" rx="2" fill="url(#acc)" opacity="0.9"/>
   <path d="M382,210 Q388,240 388,260 L412,260 Q412,240 418,210 Z" fill="url(#acc)" opacity="0.9"/>
   <rect x="390" y="255" width="20" height="5" rx="1" fill="#c8a96e" opacity="0.8"/>
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">PINTURA</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Interior · Exterior · Acabado profesional</text>
 </svg>

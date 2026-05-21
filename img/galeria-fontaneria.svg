@@ -32,7 +32,4 @@
   <circle cx="400" cy="210" r="80" fill="#e8431a" fill-opacity="0.08" stroke="#e8431a" stroke-opacity="0.2" stroke-width="1"/>
   <path d="M400,155 L430,195 C442,215 442,235 430,248 C418,260 382,260 370,248 C358,235 358,215 370,195 Z" fill="url(#acc)" opacity="0.85"/>
   <ellipse cx="390" cy="230" rx="8" ry="12" fill="#ffffff" fill-opacity="0.15"/>
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">FONTANERÍA</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Tuberías · Sanitarios · Sistemas de agua</text>
 </svg>

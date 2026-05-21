@@ -41,7 +41,4 @@
     <rect x="365" y="233" width="32" height="32" rx="2"/>
     <rect x="403" y="233" width="32" height="32" rx="2"/>
   </g>
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">INSTALACIÓN DE PISOS</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Cerámica · Porcelanato · Vinilo · Madera</text>
 </svg>

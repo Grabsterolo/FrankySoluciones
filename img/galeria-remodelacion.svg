@@ -33,7 +33,4 @@
   <!-- House icon -->
   <polygon points="400,155 440,195 435,195 435,265 365,265 365,195 360,195" fill="url(#acc)" opacity="0.9"/>
   <rect x="385" y="235" width="30" height="30" fill="#0d0e10" opacity="0.6"/>
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">REMODELACIONES</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Cocinas · Baños · Oficinas</text>
 </svg>

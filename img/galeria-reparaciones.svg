@@ -35,7 +35,4 @@
     <rect x="18" y="-6" width="8" height="12" fill="#0d0e10"/>
     <rect x="36" y="-6" width="8" height="12" fill="#0d0e10"/>
   </g>
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">REPARACIONES GENERALES</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Rápido · Limpio · Garantizado</text>
 </svg>

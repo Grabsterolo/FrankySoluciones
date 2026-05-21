@@ -54,8 +54,4 @@
   <circle cx="400" cy="220" r="80" fill="#e8431a" fill-opacity="0.08" stroke="#e8431a" stroke-opacity="0.2" stroke-width="1"/>
   <!-- Lightning bolt icon -->
   <polygon points="415,155 375,225 400,225 385,290 425,220 400,220" fill="url(#accent)" opacity="0.9"/>
-  <!-- Label area -->
-  <rect x="0" y="380" width="800" height="120" fill="#000000" fill-opacity="0.5"/>
-  <text x="50" y="435" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="2">INSTALACIONES ELÉCTRICAS</text>
-  <text x="50" y="460" font-family="Arial, sans-serif" font-size="14" fill="#e8431a" letter-spacing="1">Tableros · Tomacorrientes · Iluminación</text>
 </svg>
