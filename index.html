@@ -136,9 +136,6 @@
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
     @keyframes pulse {
       0%,100% { opacity: 1; transform: scale(1); }
       50%      { opacity: 0.45; transform: scale(1.7); }
@@ -147,14 +144,6 @@
       0%,100% { transform: translateY(0); }
       50%      { transform: translateY(-8px); }
     }
-    @keyframes slideRight {
-      from { width: 0; } to { width: 100%; }
-    }
-    @keyframes revealUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
     .animate-fadeUp { animation: fadeUp 0.8s ease both; }
     .delay-1 { animation-delay: 0.15s; }
     .delay-2 { animation-delay: 0.3s; }
@@ -274,27 +263,6 @@
       min-height: 100vh; position: relative;
       display: flex; align-items: center;
       overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background:
-        linear-gradient(135deg, rgba(10,10,11,0.97) 0%, rgba(26,58,107,0.4) 50%, rgba(10,10,11,0.98) 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px),
-        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px);
-      background-color: #0d0f12;
-      transform: translateZ(0);
-    }
-    .hero-glow {
-      position: absolute; top: 20%; right: -200px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(230,57,70,0.12) 0%, transparent 70%);
-      border-radius: 50%; pointer-events: none;
-    }
-    .hero-glow2 {
-      position: absolute; bottom: -100px; left: -150px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
-      border-radius: 50%; pointer-events: none;
     }
     .hero-content {
       position: relative; z-index: 1;
@@ -723,7 +691,6 @@
     .divider-line.center { margin: 20px auto; }
 
     /* GLOBAL FLOATING BACKGROUND */
-    .hero-bg, .hero-glow, .hero-glow2 { display: none; }
     .hero { overflow: visible; }
     .services,
     .how,
@@ -741,9 +708,7 @@
     .feature-item {
       background: rgba(19,21,23,0.74);
       border-color: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
     }
     .service-card:hover,
     .how-step:hover,
@@ -763,8 +728,14 @@
     }
     .form-control {
       background: rgba(19,21,23,0.74);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
     }
   </style>
 </head>
@@ -806,9 +777,6 @@
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
   <div class="container">
     <div class="hero-content">
       <div class="hero-eyebrow animate-fadeUp">Servicio profesional · Respuesta rápida</div>
@@ -977,19 +945,19 @@
         <p class="section-sub">Más de 200 trabajos realizados con éxito respaldados por la satisfacción de cada cliente. Hacemos el trabajo bien desde la primera vez.</p>
         <div class="why-stats" style="margin-top:40px;">
           <div class="stat-box">
-            <div class="stat-num">+200<span>.</span></div>
+            <div class="stat-num" data-count="200" data-prefix="+" data-suffix=".">+200<span>.</span></div>
             <div class="stat-label">Trabajos realizados</div>
           </div>
           <div class="stat-box">
-            <div class="stat-num">24<span>h</span></div>
+            <div class="stat-num" data-count="24" data-suffix="h">24<span>h</span></div>
             <div class="stat-label">Respuesta rápida</div>
           </div>
           <div class="stat-box">
-            <div class="stat-num">9<span>+</span></div>
+            <div class="stat-num" data-count="9" data-suffix="+">9<span>+</span></div>
             <div class="stat-label">Servicios especializados</div>
           </div>
           <div class="stat-box">
-            <div class="stat-num">100<span>%</span></div>
+            <div class="stat-num" data-count="100" data-suffix="%">100<span>%</span></div>
             <div class="stat-label">Garantía de calidad</div>
           </div>
         </div>
@@ -1359,26 +1327,52 @@
   }
 
   // FAQ ACCORDION
+  const faqItems = document.querySelectorAll('.faq-item');
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      faqItems.forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
   });
 
-  // SCROLL REVEAL
+  // REVEALS + COUNTERS
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const formatCounter = (el, value) => {
+    el.innerHTML = `${el.dataset.prefix || ''}${value}<span>${el.dataset.suffix || ''}</span>`;
+  };
+  const animateCounter = (el) => {
+    if (el.dataset.done) return;
+    el.dataset.done = 'true';
+
+    const target = Number(el.dataset.count || 0);
+    const duration = prefersReducedMotion ? 0 : 900;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = duration ? Math.min((now - start) / duration, 1) : 1;
+      const eased = 1 - Math.pow(1 - progress, 3);
+      formatCounter(el, Math.round(target * eased));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    formatCounter(el, 0);
+    requestAnimationFrame(tick);
+  };
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+    entries.forEach((e) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        e.target.classList.add('visible');
+        if (e.target.classList.contains('stat-num')) animateCounter(e.target);
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.stat-num').forEach(el => observer.observe(el));
 
   // CONTACT FORM → WhatsApp
   function handleSubmit(e) {
