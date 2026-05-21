@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#181b1e"/>
+      <stop offset="100%" style="stop-color:#0d0e10"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8431a"/>
+      <stop offset="100%" style="stop-color:#c03510"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="350" y1="0" x2="350" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="450" y1="0" x2="450" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="550" y1="0" x2="550" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="650" y1="0" x2="650" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+  </g>
+  <!-- Decorative circuit lines -->
+  <g stroke="#e8431a" stroke-opacity="0.12" stroke-width="1.5" fill="none">
+    <path d="M100,400 L200,400 L200,300 L350,300"/>
+    <path d="M600,100 L600,200 L700,200 L700,350"/>
+    <path d="M50,200 L150,200 L150,150 L300,150"/>
+    <path d="M500,400 L500,350 L650,350"/>
+    <circle cx="200" cy="400" r="4" fill="#e8431a" fill-opacity="0.3"/>
+    <circle cx="350" cy="300" r="4" fill="#e8431a" fill-opacity="0.3"/>
+    <circle cx="600" cy="200" r="4" fill="#e8431a" fill-opacity="0.3"/>
+  </g>
+  <!-- Glow effect -->
+  <circle cx="400" cy="240" r="200" fill="#e8431a" fill-opacity="0.04"/>
+  <!-- Icon background circle -->
+  <circle cx="400" cy="220" r="80" fill="#e8431a" fill-opacity="0.08" stroke="#e8431a" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- Lightning bolt icon -->
+  <polygon points="415,155 375,225 400,225 385,290 425,220 400,220" fill="url(#accent)" opacity="0.9"/>
+</svg>

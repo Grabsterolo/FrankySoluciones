@@ -3,32 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Franky Soluciones | Electricidad, Reparaciones y Mantenimiento Profesional</title>
-  <meta name="description" content="Franky Soluciones ofrece servicios profesionales de electricidad, reparaciones generales, fontanería, instalación de pisos, remodelaciones y mantenimiento residencial y comercial en Costa Rica." />
-  <meta property="og:title" content="Franky Soluciones | Servicios de Mantenimiento Profesional" />
-  <meta property="og:description" content="Electricidad, reparaciones, fontanería, pisos y más. Respuesta rápida, trabajo garantizado. Llame al 8810-8590." />
+  <title>Franky Soluciones | Electricidad, Fontanería, Pisos y Mantenimiento – GAM Costa Rica</title>
+  <meta name="description" content="Franky Soluciones: electricidad, fontanería, pisos, pintura, remodelaciones y mantenimiento en el Gran Área Metropolitana, Costa Rica. Respuesta el mismo día. Llame: 8810-8590." />
+  <meta property="og:title" content="Franky Soluciones | El trabajo queda bien o volvemos" />
+  <meta property="og:description" content="Electricidad, fontanería, pisos, pintura y más en el GAM. Cotización gratis, respuesta en menos de 1 hora. WhatsApp: 8810-8590." />
   <meta property="og:type" content="website" />
-  <meta name="keywords" content="electricidad, reparaciones, mantenimiento, construcción, pisos, fontanería, handyman, Costa Rica, plomería, remodelaciones" />
+  <meta name="keywords" content="electricista San José, fontanero Costa Rica, instalación pisos GAM, mantenimiento residencial, remodelaciones Heredia, pintura Alajuela, handyman Costa Rica" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Franky Soluciones",
+    "description": "Servicios profesionales de electricidad, fontanería, pisos, pintura, remodelaciones y mantenimiento general en el Gran Área Metropolitana de Costa Rica.",
+    "telephone": "+50688108590",
+    "url": "https://frankysoluciones.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "San José",
+      "addressCountry": "CR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.9281,
+      "longitude": -84.0907
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      }
+    ],
+    "priceRange": "$$",
+    "areaServed": "Gran Área Metropolitana, Costa Rica",
+    "serviceType": ["Electricidad","Fontanería","Instalación de pisos","Pintura","Remodelaciones","Mantenimiento general"],
+    "sameAs": ["https://wa.me/50688108590"]
+  }
+  </script>
   <style>
     :root {
-      --black: #0a0a0b;
-      --carbon: #111214;
-      --dark: #181a1d;
-      --surface: #1e2126;
-      --surface2: #252830;
-      --steel: #2e3138;
-      --metal: #8a8f99;
-      --silver: #c2c7d0;
-      --white: #f0f2f5;
+      --black: #0d0e10;
+      --carbon: #131517;
+      --dark: #181b1e;
+      --surface: #1e2228;
+      --surface2: #252a32;
+      --steel: #2e333d;
+      --metal: #7d8390;
+      --silver: #bec4d0;
+      --white: #eef0f5;
       --blue: #1a3a6b;
       --blue-mid: #1e4d99;
       --blue-bright: #2563eb;
-      --red: #c0392b;
-      --red-hot: #e63946;
-      --red-glow: rgba(198,40,40,0.18);
-      --accent: #e63946;
+      --red: #c03510;
+      --red-hot: #e8431a;
+      --red-glow: rgba(232,67,26,0.16);
+      --accent: #e8431a;
+      --accent-dark: #c03510;
+      --gold: #f5a623;
+      --green: #10b981;
+      --green-wa: #25d366;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -113,14 +150,14 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       padding: 0 24px;
-      background: rgba(10,10,11,0.0);
-      transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s, padding 0.3s;
+      background: transparent;
+      transition: background 0.3s ease, border-bottom 0.3s ease;
     }
     nav.scrolled {
-      background: rgba(10,10,11,0.96);
-      backdrop-filter: blur(16px);
+      background: rgba(13,14,16,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 0 24px;
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
@@ -240,7 +277,7 @@
     }
     .hero-content {
       position: relative; z-index: 1;
-      padding-top: 100px; padding-bottom: 60px;
+      padding-top: 130px; padding-bottom: 60px;
       max-width: 800px;
     }
     .hero-eyebrow {
@@ -338,11 +375,13 @@
     .service-card:hover::after { width: 100%; }
     .service-icon {
       width: 56px; height: 56px; border-radius: 8px;
-      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2);
+      background: rgba(232,67,26,0.1); border: 1px solid rgba(232,67,26,0.2);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 24px; font-size: 26px;
+      margin-bottom: 24px;
       transition: all 0.35s ease;
+      color: var(--accent);
     }
+    .service-icon svg { width: 26px; height: 26px; }
     .service-card:hover .service-icon {
       background: rgba(230,57,70,0.2); border-color: rgba(230,57,70,0.4);
     }
@@ -359,8 +398,52 @@
       line-height: 1; pointer-events: none;
     }
 
+    /* HOW IT WORKS */
+    .how { background: var(--black); }
+    .how-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .how-step {
+      background: var(--carbon); padding: 40px 28px;
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; text-align: center;
+      transition: all 0.3s ease;
+    }
+    .how-step:hover { background: var(--surface); transform: translateY(-4px); }
+    .how-step::after {
+      content: ''; position: absolute; top: 50%; right: -1px;
+      width: 1px; height: 40%; background: rgba(232,67,26,0.3);
+      transform: translateY(-50%);
+    }
+    .how-step:last-child::after { display: none; }
+    .how-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    }
+    .how-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(232,67,26,0.1); border: 1px solid rgba(232,67,26,0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; color: var(--accent);
+    }
+    .how-icon svg { width: 26px; height: 26px; }
+    .how-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 12px; color: var(--white);
+    }
+    .how-desc { font-size: 14px; color: var(--metal); line-height: 1.7; }
+    @media (max-width: 768px) {
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .how-step::after { display: none; }
+    }
+    @media (max-width: 480px) {
+      .how-grid { grid-template-columns: 1fr; }
+    }
+
     /* WHY US */
-    .why { background: var(--black); }
+    .why { background: var(--dark); }
     .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .stat-box {
@@ -389,10 +472,11 @@
     .feature-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(230,57,70,0.2); }
     .feature-icon-wrap {
       width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2);
+      background: rgba(232,67,26,0.1); border: 1px solid rgba(232,67,26,0.2);
       border-radius: 6px; display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
+      color: var(--accent);
     }
+    .feature-icon-wrap svg { width: 20px; height: 20px; }
     .feature-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 18px; font-weight: 800; text-transform: uppercase;
@@ -401,7 +485,7 @@
     .feature-text { font-size: 14px; color: var(--metal); line-height: 1.6; }
 
     /* GALLERY */
-    .gallery { background: var(--carbon); }
+    .gallery { background: var(--dark); }
     .gallery-header { margin-bottom: 56px; }
     .gallery-grid {
       display: grid;
@@ -418,18 +502,17 @@
     .gallery-item:nth-child(4) { grid-column: span 2; min-height: 300px; }
     .gallery-bg {
       position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 64px; background: var(--surface2);
+      background-size: cover; background-position: center;
       transition: transform 0.5s ease;
     }
     .gallery-item:hover .gallery-bg { transform: scale(1.06); }
     .gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
-      opacity: 0; transition: opacity 0.35s ease;
+      background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+      opacity: 1; transition: opacity 0.35s ease;
       display: flex; align-items: flex-end; padding: 24px;
     }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
     .gallery-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 20px; font-weight: 800; text-transform: uppercase;
@@ -473,6 +556,30 @@
       font-size: 16px; font-weight: 800; letter-spacing: 0.5px;
     }
     .testi-role { font-size: 12px; color: var(--metal); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* FAQ */
+    .faq { background: var(--black); }
+    .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { border: 1px solid rgba(255,255,255,0.06); background: var(--carbon); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 22px 28px; background: none; border: none;
+      color: var(--white); font-family: 'Barlow', sans-serif;
+      font-size: 16px; font-weight: 600; text-align: left; cursor: pointer;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-arrow { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.3s ease; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 28px 22px; }
+    .faq-a p { font-size: 15px; color: var(--metal); line-height: 1.75; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; }
+    .faq-item.open { border-color: rgba(232,67,26,0.2); }
+    .faq-item.open .faq-q { color: var(--accent); }
 
     /* CTA BAND */
     .cta-band {
@@ -536,6 +643,27 @@
       transition: all 0.25s;
     }
     .social-btn:hover { background: rgba(230,57,70,0.15); border-color: rgba(230,57,70,0.3); color: var(--red-hot); }
+
+    /* MOBILE STICKY BAR */
+    .mobile-sticky {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
+      height: 64px;
+      transform: translateY(100%); transition: transform 0.4s ease;
+    }
+    .mobile-sticky.visible { transform: translateY(0); }
+    .mob-sticky-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: white;
+      transition: filter 0.2s;
+    }
+    .mob-sticky-btn:hover { filter: brightness(1.1); }
+    .mob-call { background: var(--accent); }
+    .mob-wa { background: var(--green-wa); }
+    @media (max-width: 768px) {
+      .mobile-sticky { display: flex; }
+      .wa-float { bottom: 80px; right: 20px; width: 52px; height: 52px; }
+    }
 
     /* WHATSAPP FLOAT */
     .wa-float {
@@ -663,8 +791,8 @@
   <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
   <a href="#galeria" onclick="closeMobile()">Galería</a>
   <a href="#contacto" onclick="closeMobile()">Contacto</a>
-  <a href="tel:88108590" class="mob-cta">📞 Llamar: 8810-8590</a>
-  <a href="https://wa.me/50688108590" target="_blank" class="mob-cta" style="background:#25d366; margin-top:0;">💬 WhatsApp</a>
+  <a href="tel:88108590" class="mob-cta">Llamar: 8810-8590</a>
+  <a href="https://wa.me/50688108590" target="_blank" class="mob-cta" style="background:#25d366; margin-top:0;">WhatsApp</a>
 </div>
 
 <!-- HERO -->
@@ -727,57 +855,103 @@
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="service-num">01</span>
-        <div class="service-icon">⚡</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg></div>
         <div class="service-title">Instalaciones Eléctricas</div>
         <p class="service-desc">Instalación y reparación de sistemas eléctricos, tableros, tomacorrientes, iluminación y más. Trabajo seguro y certificado.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">02</span>
-        <div class="service-icon">🔧</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
         <div class="service-title">Reparaciones Generales</div>
         <p class="service-desc">Resolvemos cualquier problema de mantenimiento en su propiedad. Rápido, limpio y sin complicaciones.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">03</span>
-        <div class="service-icon">🔩</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div>
         <div class="service-title">Fontanería</div>
         <p class="service-desc">Instalación y reparación de tuberías, llaves, sanitarios, duchas, sistemas de agua y desagüe.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">04</span>
-        <div class="service-icon">🏠</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
         <div class="service-title">Instalación de Pisos</div>
         <p class="service-desc">Cerámica, porcelanato, vinilo, madera y más. Instalación precisa con acabado impecable.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">05</span>
-        <div class="service-icon">🏗️</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
         <div class="service-title">Remodelaciones</div>
         <p class="service-desc">Transformamos espacios. Cocinas, baños, oficinas y más con diseño funcional y materiales de calidad.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">06</span>
-        <div class="service-icon">🎨</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L3 14.67V21h6.33l10.06-10.06a5.5 5.5 0 0 0 0-7.78z"></path><line x1="16" y1="5" x2="19" y2="8"></line></svg></div>
         <div class="service-title">Pintura</div>
         <p class="service-desc">Pintura interior y exterior. Acabados profesionales que renuevan completamente cualquier ambiente.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">07</span>
-        <div class="service-icon">🔥</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div>
         <div class="service-title">Soldadura Básica</div>
         <p class="service-desc">Trabajos de soldadura para portones, rejas, estructuras metálicas y reparaciones en general.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">08</span>
-        <div class="service-icon">🛠️</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
         <div class="service-title">Mantenimiento Preventivo</div>
         <p class="service-desc">Evite costosas reparaciones futuras. Programas de mantenimiento para residencias y locales comerciales.</p>
       </div>
       <div class="service-card reveal">
         <span class="service-num">09</span>
-        <div class="service-icon">⚙️</div>
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
         <div class="service-title">Instalaciones Varias</div>
         <p class="service-desc">Aires acondicionados, muebles, estructuras, cielos rasos, divisiones y cualquier instalación que necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how" id="proceso">
+  <div class="container">
+    <div class="how-header reveal" style="text-align:center; margin-bottom:64px;">
+      <div class="tag">Simple y sin complicaciones</div>
+      <h2 class="section-title">Cómo <span>funciona</span></h2>
+      <div class="divider-line center"></div>
+      <p class="section-sub" style="margin:16px auto 0;">De la llamada al trabajo terminado en cuatro pasos. Sin sorpresas, sin letra pequeña.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-num">01</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 10.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92v2z"/></svg>
+        </div>
+        <h3 class="how-title">Nos contacta</h3>
+        <p class="how-desc">Llame o escriba por WhatsApp. Cuéntenos qué necesita y en qué zona está. Respondemos en menos de 1 hora.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">02</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <h3 class="how-title">Cotización gratis</h3>
+        <p class="how-desc">Le enviamos un presupuesto claro y detallado. Sin visita obligatoria para trabajos menores. Sin compromisos.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">03</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <h3 class="how-title">Hacemos el trabajo</h3>
+        <p class="how-desc">Llegamos en la fecha acordada, trabajamos con orden y precisión. Dejamos el espacio limpio al terminar.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">04</div>
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        </div>
+        <h3 class="how-title">Garantía incluida</h3>
+        <p class="how-desc">Si algo no queda como se acordó, volvemos y lo corregimos sin costo adicional. Así de simple.</p>
       </div>
     </div>
   </div>
@@ -813,35 +987,35 @@
       </div>
       <div class="why-features reveal">
         <div class="feature-item">
-          <div class="feature-icon-wrap">⚡</div>
+          <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg></div>
           <div>
             <div class="feature-title">Atención Rápida</div>
             <p class="feature-text">Nos desplazamos pronto para evaluar y resolver su problema sin hacerle esperar más de lo necesario.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-wrap">🎯</div>
+          <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
           <div>
             <div class="feature-title">Experiencia Práctica</div>
             <p class="feature-text">Años de experiencia en todo tipo de trabajos residenciales y comerciales. Sabemos lo que hacemos.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-wrap">✨</div>
+          <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
           <div>
             <div class="feature-title">Trabajo Limpio</div>
             <p class="feature-text">Llegamos, trabajamos con orden y nos vamos dejando todo limpio. Su espacio queda mejor que cuando llegamos.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-wrap">💰</div>
+          <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
           <div>
             <div class="feature-title">Precios Justos</div>
             <p class="feature-text">Cotizaciones transparentes sin sorpresas. Calidad profesional a precios accesibles y competitivos.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon-wrap">🛡️</div>
+          <div class="feature-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
           <div>
             <div class="feature-title">Garantía de Calidad</div>
             <p class="feature-text">Respaldamos nuestro trabajo. Si algo no queda bien, volvemos y lo corregimos sin costo adicional.</p>
@@ -863,39 +1037,39 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a2a4a,#0d1520); font-size:80px;">🏠</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-electricidad.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Instalación de Pisos<small>Porcelanato premium</small></div>
+          <div class="gallery-label">Instalaciones Eléctricas<small>Tableros · Tomacorrientes · Iluminación</small></div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#2a1a1a,#1a0d0d);">⚡</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-fontaneria.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Sistema Eléctrico<small>Tablero residencial</small></div>
+          <div class="gallery-label">Fontanería<small>Tuberías · Sanitarios · Sistemas de agua</small></div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a1a2a,#0d0d1a);">🚿</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-pisos.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Fontanería<small>Baño completo</small></div>
+          <div class="gallery-label">Instalación de Pisos<small>Cerámica · Porcelanato · Vinilo</small></div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a2a1a,#0d1a0d); font-size:80px;">🎨</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-pintura.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Pintura Interior<small>Acabado premium</small></div>
+          <div class="gallery-label">Pintura<small>Interior · Exterior · Acabado profesional</small></div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#2a2a1a,#1a1a0d);">🔧</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-remodelacion.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Remodelación<small>Cocina residencial</small></div>
+          <div class="gallery-label">Remodelaciones<small>Cocinas · Baños · Oficinas</small></div>
         </div>
       </div>
       <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a1a1a,#2a1a2a);">🏗️</div>
+        <div class="gallery-bg" style="background-image: url('img/galeria-reparaciones.svg'); background-size: cover; background-position: center;"></div>
         <div class="gallery-overlay">
-          <div class="gallery-label">Construcción Ligera<small>División de espacios</small></div>
+          <div class="gallery-label">Reparaciones Generales<small>Rápido · Limpio · Garantizado</small></div>
         </div>
       </div>
     </div>
@@ -977,6 +1151,61 @@
             <div class="testi-role">Escazú · Cliente empresarial</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal" style="text-align:center; margin-bottom:56px;">
+      <div class="tag">Preguntas frecuentes</div>
+      <h2 class="section-title">Resolvemos sus <span>dudas</span></h2>
+      <div class="divider-line center"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Cobran por venir a revisar el problema?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>La evaluación inicial es completamente gratuita y sin compromiso. Llegamos, revisamos, y le damos un presupuesto claro antes de empezar cualquier trabajo.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Qué pasa si el trabajo no queda como se acordó?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Todos nuestros trabajos tienen garantía de 30 días en mano de obra. Si algo no queda bien, volvemos y lo corregimos sin costo adicional. Su satisfacción es nuestra prioridad.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Cuánto tiempo tarda en llegar la cotización?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Para trabajos menores, enviamos el presupuesto por WhatsApp en menos de 1 hora. Para proyectos mayores que requieren visita, coordinamos una visita de evaluación dentro del día.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Los materiales los compran ustedes o yo?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Ambas opciones funcionan. Si prefiere, nosotros conseguimos los materiales al mejor precio y le cobramos solo el costo real. O si ya los tiene, solo le cobramos la mano de obra. Usted decide.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿Trabajan fines de semana?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Atendemos de lunes a sábado de 7am a 7pm. Para emergencias fuera de horario, escríbanos por WhatsApp y hacemos lo posible por atenderle.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>¿En qué zonas atienden?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="faq-a"><p>Cubrimos todo el Gran Área Metropolitana: San José, Heredia, Alajuela, Cartago, Escazú, Desamparados, Moravia, Curridabat, La Unión, Santa Ana y zonas aledañas. Si tiene duda sobre su zona, escríbanos.</p></div>
       </div>
     </div>
   </div>
@@ -1123,7 +1352,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Franky Soluciones. Todos los derechos reservados.</p>
+      <p>© 2026 Franky Soluciones. Todos los derechos reservados.</p>
       <div class="footer-socials">
         <a href="https://wa.me/50688108590" target="_blank" class="social-btn" title="WhatsApp">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1144,11 +1373,30 @@
   </svg>
 </a>
 
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky" id="mobileSticky">
+  <a href="tel:88108590" class="mob-sticky-btn mob-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 10.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92v2z"/></svg>
+    Llamar
+  </a>
+  <a href="https://wa.me/50688108590" target="_blank" class="mob-sticky-btn mob-wa">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
 <script>
   // NAV SCROLL
   const nav = document.getElementById('navbar');
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   // HAMBURGER
@@ -1162,6 +1410,22 @@
     ham.classList.remove('open');
     mob.classList.remove('open');
   }
+
+  // MOBILE STICKY BAR
+  const mobileSticky = document.getElementById('mobileSticky');
+  window.addEventListener('scroll', () => {
+    if (mobileSticky) mobileSticky.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 
   // SCROLL REVEAL
   const observer = new IntersectionObserver((entries) => {

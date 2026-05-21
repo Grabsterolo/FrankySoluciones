@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#100d14"/>
+      <stop offset="100%" style="stop-color:#0d0e10"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8431a"/>
+      <stop offset="100%" style="stop-color:#c03510"/>
+    </linearGradient>
+    <linearGradient id="paint1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8431a;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#c03510;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="paint2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e4d99;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#1a3a6b;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Paint stroke decorations -->
+  <ellipse cx="150" cy="200" rx="180" ry="20" fill="url(#paint1)" transform="rotate(-15 150 200)"/>
+  <ellipse cx="650" cy="150" rx="160" ry="18" fill="url(#paint2)" transform="rotate(10 650 150)"/>
+  <ellipse cx="300" cy="350" rx="200" ry="15" fill="#e8431a" fill-opacity="0.08" transform="rotate(-8 300 350)"/>
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/><line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="100" y1="0" x2="100" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+  </g>
+  <circle cx="400" cy="230" r="190" fill="#e8431a" fill-opacity="0.04"/>
+  <circle cx="400" cy="210" r="80" fill="#e8431a" fill-opacity="0.08" stroke="#e8431a" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- Paint brush icon -->
+  <rect x="388" y="155" width="12" height="55" rx="2" fill="url(#acc)" opacity="0.9"/>
+  <path d="M382,210 Q388,240 388,260 L412,260 Q412,240 418,210 Z" fill="url(#acc)" opacity="0.9"/>
+  <rect x="390" y="255" width="20" height="5" rx="1" fill="#c8a96e" opacity="0.8"/>
+</svg>
