@@ -11,6 +11,7 @@
   <meta name="keywords" content="electricista San José, fontanero Costa Rica, instalación pisos GAM, mantenimiento residencial, remodelaciones Heredia, pintura Alajuela, handyman Costa Rica" />
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
@@ -115,8 +116,8 @@
       from { opacity: 0; } to { opacity: 1; }
     }
     @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(230,57,70,0.4); }
-      50%      { box-shadow: 0 0 0 12px rgba(230,57,70,0); }
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.45; transform: scale(1.7); }
     }
     @keyframes float {
       0%,100% { transform: translateY(0); }
@@ -124,10 +125,6 @@
     }
     @keyframes slideRight {
       from { width: 0; } to { width: 100%; }
-    }
-    @keyframes gridPan {
-      from { background-position: 0 0; }
-      to   { background-position: 60px 60px; }
     }
     @keyframes revealUp {
       from { opacity: 0; transform: translateY(50px); }
@@ -261,7 +258,7 @@
         repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px),
         repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px);
       background-color: #0d0f12;
-      animation: gridPan 20s linear infinite;
+      transform: translateZ(0);
     }
     .hero-glow {
       position: absolute; top: 20%; right: -200px;
@@ -290,6 +287,7 @@
     .hero-eyebrow::before {
       content: ''; width: 8px; height: 8px; border-radius: 50%;
       background: var(--red-hot); animation: pulse 2s infinite;
+      transform-origin: center;
     }
     .hero-h1 {
       font-family: 'Barlow Condensed', sans-serif;
@@ -345,6 +343,10 @@
     }
 
     /* SERVICES */
+    .section:not(.hero) {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 760px;
+    }
     .services { background: var(--carbon); }
     .services-header { text-align: center; margin-bottom: 64px; }
     .services-header .section-sub { margin: 16px auto 0; }
@@ -1388,16 +1390,19 @@
 <script>
   // NAV SCROLL
   const nav = document.getElementById('navbar');
+  const mobileSticky = document.getElementById('mobileSticky');
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(() => {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
+        const scrollY = window.scrollY;
+        nav.classList.toggle('scrolled', scrollY > 40);
+        if (mobileSticky) mobileSticky.classList.toggle('visible', scrollY > 400);
         ticking = false;
       });
       ticking = true;
     }
-  });
+  }, { passive: true });
 
   // HAMBURGER
   const ham = document.getElementById('hamburger');
@@ -1410,12 +1415,6 @@
     ham.classList.remove('open');
     mob.classList.remove('open');
   }
-
-  // MOBILE STICKY BAR
-  const mobileSticky = document.getElementById('mobileSticky');
-  window.addEventListener('scroll', () => {
-    if (mobileSticky) mobileSticky.classList.toggle('visible', window.scrollY > 400);
-  });
 
   // FAQ ACCORDION
   document.querySelectorAll('.faq-q').forEach(btn => {
