@@ -348,24 +348,27 @@
       gap: 2px;
     }
     .service-card {
-      background: var(--dark); padding: 40px 32px;
-      border: 1px solid rgba(255,255,255,0.04);
+      background: var(--dark); background-size: cover; background-position: center;
+      padding: 40px 32px;
+      border: 1px solid rgba(255,255,255,0.06);
       position: relative; overflow: hidden;
-      transition: all 0.35s ease; cursor: default;
-      group: true;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
     .service-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(230,57,70,0.06), transparent);
-      opacity: 0; transition: opacity 0.35s ease;
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(160deg, rgba(10,11,14,0.93) 0%, rgba(16,18,22,0.86) 100%);
+      transition: background 0.4s ease;
+    }
+    .service-card:hover::before {
+      background: linear-gradient(160deg, rgba(10,11,14,0.80) 0%, rgba(16,18,22,0.70) 100%);
     }
     .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0;
+      content: ''; position: absolute; bottom: 0; left: 0; z-index: 1;
       width: 0; height: 2px; background: var(--red-hot);
       transition: width 0.4s ease;
     }
-    .service-card:hover { background: var(--surface); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-    .service-card:hover::before { opacity: 1; }
+    .service-card > * { position: relative; z-index: 1; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 24px 64px rgba(0,0,0,0.55); border-color: rgba(232,67,26,0.2); }
     .service-card:hover::after { width: 100%; }
     .service-icon {
       width: 56px; height: 56px; border-radius: 8px;
@@ -1582,55 +1585,55 @@
   // === SERVICE MODAL ===
   const SERVICES = [
     {
-      num: '01', title: 'Instalaciones Eléctricas',
+      num: '01', title: 'Instalaciones Eléctricas', img: 'img/electricidad.jpg',
       desc: 'Realizamos instalaciones eléctricas residenciales y comerciales desde cero, así como diagnóstico y reparación de sistemas existentes. Trabajamos con materiales certificados y garantizamos seguridad en cada conexión.',
       features: ['Tableros eléctricos y breakers','Tomacorrientes e interruptores','Iluminación LED interior y exterior','Cableado nuevo y ampliaciones','Diagnóstico y reparación de fallas'],
       visual: `<img src="img/electricidad.jpg" alt="Instalaciones Eléctricas"/>`
     },
     {
-      num: '02', title: 'Reparaciones Generales',
+      num: '02', title: 'Reparaciones Generales', img: 'img/reparaciones.jpg',
       desc: 'Resolvemos todo tipo de problemas de mantenimiento en residencias y locales comerciales. De la llamada al trabajo terminado con rapidez, limpieza y sin complicaciones.',
       features: ['Puertas, ventanas y cerraduras','Cielos rasos y paredes','Filtraciones y humedad','Impermeabilización básica','Daños estructurales menores'],
       visual: `<img src="img/reparaciones.jpg" alt="Reparaciones Generales"/>`
     },
     {
-      num: '03', title: 'Fontanería',
+      num: '03', title: 'Fontanería', img: 'img/fontaneria.jpg',
       desc: 'Instalamos y reparamos todo tipo de sistemas hidráulicos y sanitarios. Desde una llave que gotea hasta la instalación completa de tuberías en obra nueva o remodelación.',
       features: ['Tuberías de agua fría y caliente','Llaves, válvulas y registros','Sanitarios, lavatorios y duchas','Tanques y bombas de agua','Desagüe y sistemas de alcantarillado'],
       visual: `<img src="img/fontaneria.jpg" alt="Fontanería"/>`
     },
     {
-      num: '04', title: 'Instalación de Pisos',
+      num: '04', title: 'Instalación de Pisos', img: 'img/pisos.jpg',
       desc: 'Instalamos todo tipo de pisos con precisión milimétrica. Preparamos la superficie correctamente para garantizar un acabado perfecto y duradero, sin irregularidades ni fisuras.',
       features: ['Cerámica y porcelanato','Piso vinílico y laminado','Madera y bambú natural','Nivelación y preparación de contrapiso','Zócalos y acabados de borde'],
       visual: `<img src="img/pisos.jpg" alt="Instalación de Pisos"/>`
     },
     {
-      num: '05', title: 'Remodelaciones',
+      num: '05', title: 'Remodelaciones', img: 'img/remodelacion.jpg',
       desc: 'Transformamos espacios completos con criterio de diseño y materiales de calidad. Coordinamos todos los oficios necesarios para entregar su proyecto terminado y a su gusto.',
       features: ['Cocinas completas','Baños y áreas húmedas','Ampliaciones y tabiques','Acabados y detalles finos','Oficinas y locales comerciales'],
       visual: `<img src="img/remodelacion.jpg" alt="Remodelaciones"/>`
     },
     {
-      num: '06', title: 'Pintura',
+      num: '06', title: 'Pintura', img: 'img/pintura.jpg',
       desc: 'Renovamos interiores y exteriores con acabados de alto nivel. Preparamos correctamente cada superficie antes de pintar para asegurar que el resultado sea impecable y duradero.',
       features: ['Pintura interior y exterior','Masillado y preparación de superficie','Acabados mate, semimate y brillante','Texturas y efectos decorativos','Impermeabilización de fachadas'],
       visual: `<img src="img/pintura.jpg" alt="Pintura"/>`
     },
     {
-      num: '07', title: 'Soldadura Básica',
+      num: '07', title: 'Soldadura Básica', img: 'img/soldadura.jpg',
       desc: 'Fabricamos y reparamos estructuras metálicas con soldadura de calidad. Portones, rejas, escaleras y marcos con acabado anticorrosivo para mayor durabilidad.',
       features: ['Portones y rejas metálicas','Estructuras y marcos de acero','Reparaciones de herrería existente','Pasamanos y escaleras','Acabado anticorrosivo y pintura epóxica'],
       visual: `<img src="img/soldadura.jpg" alt="Soldadura Básica"/>`
     },
     {
-      num: '08', title: 'Mantenimiento Preventivo',
+      num: '08', title: 'Mantenimiento Preventivo', img: 'img/mantenimiento.jpg',
       desc: 'Programas de revisión periódica para residencias y locales. Detectamos problemas antes de que se vuelvan costosos y entregamos un informe completo del estado de su propiedad.',
       features: ['Inspección eléctrica completa','Revisión de fontanería y desagüe','Estado de techos y estructura','Limpieza de canaletas y bajantes','Informe escrito con recomendaciones'],
       visual: `<img src="img/mantenimiento.jpg" alt="Mantenimiento Preventivo"/>`
     },
     {
-      num: '09', title: 'Instalaciones Varias',
+      num: '09', title: 'Instalaciones Varias', img: 'img/instalaciones.jpg',
       desc: 'Realizamos cualquier tipo de instalación que su propiedad necesite. Desde aires acondicionados hasta cielos rasos y divisiones, con el mismo estándar de calidad en cada trabajo.',
       features: ['Aires acondicionados (split y central)','Muebles, closets y estanterías','Cielos rasos y cielorrasos decorativos','Tabiques y divisiones de espacio','Puertas, ventanas y estructuras varias'],
       visual: `<img src="img/instalaciones.jpg" alt="Instalaciones Varias"/>`
@@ -1662,6 +1665,8 @@
   }
 
   document.querySelectorAll('.service-card[data-service]').forEach(card => {
+    const svc = SERVICES[+card.dataset.service];
+    if (svc.img) card.style.backgroundImage = `url('${svc.img}')`;
     card.addEventListener('click', () => openSvc(+card.dataset.service));
   });
   document.getElementById('svcClose').addEventListener('click', closeSvc);
