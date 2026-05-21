@@ -145,19 +145,40 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* EMERGENCY BAR */
+    .emergency-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1010;
+      background: var(--accent); color: #fff;
+      height: 44px; display: flex; align-items: center; justify-content: center;
+      gap: 20px; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      transition: transform 0.4s ease;
+    }
+    .emergency-bar.hidden { transform: translateY(-100%); }
+    .emergency-bar a {
+      color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px;
+      background: rgba(0,0,0,0.2); padding: 4px 14px; border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .emergency-bar a:hover { background: rgba(0,0,0,0.35); }
+    .emergency-bar .bar-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #fff;
+      animation: pulse 2s infinite;
+    }
+
     /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 44px; left: 0; right: 0; z-index: 1000;
       padding: 0 24px;
-      background: rgba(10,10,11,0.0);
-      transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s, padding 0.3s;
+      background: rgba(13,14,16,0.0);
+      transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s, top 0.4s;
     }
     nav.scrolled {
-      background: rgba(10,10,11,0.96);
+      background: rgba(13,14,16,0.96);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 0 24px;
     }
+    nav.bar-hidden { top: 0; }
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
@@ -276,7 +297,7 @@
     }
     .hero-content {
       position: relative; z-index: 1;
-      padding-top: 100px; padding-bottom: 60px;
+      padding-top: 130px; padding-bottom: 60px;
       max-width: 800px;
     }
     .hero-eyebrow {
@@ -666,6 +687,16 @@
   </style>
 </head>
 <body>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar" id="emergencyBar">
+  <span class="bar-dot"></span>
+  <span>Servicio disponible Lun–Sáb · 7am–7pm</span>
+  <a href="tel:88108590">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+    Llamar: 8810-8590
+  </a>
+</div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -1181,10 +1212,14 @@
 </a>
 
 <script>
-  // NAV SCROLL
+  // EMERGENCY BAR + NAV SCROLL
   const nav = document.getElementById('navbar');
+  const bar = document.getElementById('emergencyBar');
   window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 80;
     nav.classList.toggle('scrolled', window.scrollY > 40);
+    bar.classList.toggle('hidden', scrolled);
+    nav.classList.toggle('bar-hidden', scrolled);
   });
 
   // HAMBURGER
