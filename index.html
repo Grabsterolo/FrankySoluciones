@@ -697,6 +697,33 @@
     .contact-info-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--metal); margin-bottom: 6px; }
     .contact-info-val { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); }
 
+    /* TESTIMONIALS SWIPE ON MOBILE */
+    @media (max-width: 768px) {
+      .testi-swipe-outer {
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: calc(50% - 140px);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        margin: 0 -24px;
+        padding: 8px 0 20px;
+      }
+      .testi-swipe-outer::-webkit-scrollbar { display: none; }
+      .testi-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 16px;
+        padding: 0 calc(50vw - 140px);
+        width: max-content;
+      }
+      .testi-card {
+        width: 280px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+    }
+
     /* MARQUEE → SWIPE ON MOBILE */
     @media (max-width: 768px) {
       .marquee-wrapper {
@@ -969,7 +996,6 @@
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="#contacto" class="nav-cta">Cotización</a>
     <button class="hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
@@ -1169,7 +1195,7 @@
         <p class="service-desc">Aires acondicionados, muebles, estructuras, cielos rasos, divisiones y cualquier instalación que necesite.</p>
         <span class="svc-expand">Ver más <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></span>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1297,7 +1323,7 @@
       <div class="divider-line center"></div>
       <p class="section-sub">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
     </div>
-    <div class="testi-grid">
+    <div class="testi-swipe-outer"><div class="testi-grid">
       <div class="testi-card reveal">
         <div class="stars">★★★★★</div>
         <p class="testi-text">Llamé por un problema eléctrico un viernes y Franky llegó esa misma tarde. Resolvió todo rápido, explicó lo que hizo y el precio fue muy razonable. Totalmente recomendado.</p>
