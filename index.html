@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franky Soluciones | Electricidad, Reparaciones y Mantenimiento Profesional</title>
+  <meta name="description" content="Franky Soluciones ofrece servicios profesionales de electricidad, reparaciones generales, fontanería, instalación de pisos, remodelaciones y mantenimiento residencial y comercial en Costa Rica." />
+  <meta property="og:title" content="Franky Soluciones | Servicios de Mantenimiento Profesional" />
+  <meta property="og:description" content="Electricidad, reparaciones, fontanería, pisos y más. Respuesta rápida, trabajo garantizado. Llame al 8810-8590." />
+  <meta property="og:type" content="website" />
+  <meta name="keywords" content="electricidad, reparaciones, mantenimiento, construcción, pisos, fontanería, handyman, Costa Rica, plomería, remodelaciones" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #0a0a0b;
+      --carbon: #111214;
+      --dark: #181a1d;
+      --surface: #1e2126;
+      --surface2: #252830;
+      --steel: #2e3138;
+      --metal: #8a8f99;
+      --silver: #c2c7d0;
+      --white: #f0f2f5;
+      --blue: #1a3a6b;
+      --blue-mid: #1e4d99;
+      --blue-bright: #2563eb;
+      --red: #c0392b;
+      --red-hot: #e63946;
+      --red-glow: rgba(198,40,40,0.18);
+      --accent: #e63946;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--carbon); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+    /* UTILITY */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(230,57,70,0.12); border: 1px solid rgba(230,57,70,0.3);
+      color: var(--red-hot); font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 2px; margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 900; line-height: 1.05; text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .section-title span { color: var(--red-hot); }
+    .section-sub {
+      font-size: 17px; color: var(--metal); line-height: 1.7; max-width: 560px;
+      font-weight: 300; margin-top: 16px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(230,57,70,0.4); }
+      50%      { box-shadow: 0 0 0 12px rgba(230,57,70,0); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes slideRight {
+      from { width: 0; } to { width: 100%; }
+    }
+    @keyframes gridPan {
+      from { background-position: 0 0; }
+      to   { background-position: 60px 60px; }
+    }
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeUp { animation: fadeUp 0.8s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 24px;
+      background: rgba(10,10,11,0.0);
+      transition: background 0.4s, backdrop-filter 0.4s, border-bottom 0.4s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,11,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 40px; height: 40px;
+      background: var(--red-hot);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 20px; color: white;
+      letter-spacing: -1px;
+    }
+    .nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 20px; color: var(--white);
+      letter-spacing: 0.5px; line-height: 1;
+    }
+    .nav-logo-text small {
+      display: block; font-size: 11px; font-weight: 400;
+      letter-spacing: 2px; color: var(--metal); text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 36px; list-style: none;
+    }
+    .nav-links a {
+      color: var(--silver); text-decoration: none; font-size: 14px;
+      font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--red-hot);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--red-hot); color: white; padding: 10px 22px;
+      border-radius: 3px; font-weight: 700; font-size: 13px;
+      letter-spacing: 1px; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #c0392b; transform: translateY(-1px); }
+    .nav-phone {
+      color: var(--white); font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 18px; text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-phone svg { color: var(--red-hot); }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px; background: var(--white);
+      border-radius: 2px; transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(10,10,11,0.97); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06); padding: 24px;
+      flex-direction: column; gap: 20px; z-index: 999;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--silver); text-decoration: none; font-size: 16px;
+      font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:last-child { border: none; }
+    .mobile-menu .mob-cta {
+      display: block; text-align: center;
+      background: var(--red-hot); color: white;
+      padding: 14px; border-radius: 3px; font-weight: 700;
+      font-size: 15px; letter-spacing: 1px; margin-top: 8px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        linear-gradient(135deg, rgba(10,10,11,0.97) 0%, rgba(26,58,107,0.4) 50%, rgba(10,10,11,0.98) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.025) 60px);
+      background-color: #0d0f12;
+      animation: gridPan 20s linear infinite;
+    }
+    .hero-glow {
+      position: absolute; top: 20%; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(230,57,70,0.12) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute; bottom: -100px; left: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      padding-top: 100px; padding-bottom: 60px;
+      max-width: 800px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.25);
+      color: var(--red-hot); font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 2px; margin-bottom: 32px;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--red-hot); animation: pulse 2s infinite;
+    }
+    .hero-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 900; line-height: 0.95; text-transform: uppercase;
+      letter-spacing: -2px; margin-bottom: 28px;
+    }
+    .hero-h1 .line2 {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.4);
+    }
+    .hero-h1 .accent { color: var(--red-hot); }
+    .hero-sub {
+      font-size: 18px; color: var(--silver); line-height: 1.7; font-weight: 300;
+      max-width: 560px; margin-bottom: 44px;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 60px;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red-hot); color: white;
+      padding: 16px 32px; border-radius: 3px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.25s ease; box-shadow: 0 4px 30px rgba(230,57,70,0.35);
+    }
+    .btn-primary:hover { background: #c0392b; transform: translateY(-2px); box-shadow: 0 8px 40px rgba(230,57,70,0.45); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--white);
+      padding: 15px 32px; border-radius: 3px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.25);
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 24px;
+    }
+    .badge {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--silver); font-size: 14px; font-weight: 500;
+    }
+    .badge-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+
+    /* SERVICES */
+    .services { background: var(--carbon); }
+    .services-header { text-align: center; margin-bottom: 64px; }
+    .services-header .section-sub { margin: 16px auto 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--dark); padding: 40px 32px;
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+      transition: all 0.35s ease; cursor: default;
+      group: true;
+    }
+    .service-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(230,57,70,0.06), transparent);
+      opacity: 0; transition: opacity 0.35s ease;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--red-hot);
+      transition: width 0.4s ease;
+    }
+    .service-card:hover { background: var(--surface); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover::after { width: 100%; }
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 8px;
+      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px; font-size: 26px;
+      transition: all 0.35s ease;
+    }
+    .service-card:hover .service-icon {
+      background: rgba(230,57,70,0.2); border-color: rgba(230,57,70,0.4);
+    }
+    .service-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 12px; color: var(--white);
+    }
+    .service-desc { font-size: 14px; color: var(--metal); line-height: 1.7; font-weight: 300; }
+    .service-num {
+      position: absolute; top: 24px; right: 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 900; color: rgba(255,255,255,0.04);
+      line-height: 1; pointer-events: none;
+    }
+
+    /* WHY US */
+    .why { background: var(--black); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .stat-box {
+      background: var(--carbon); padding: 40px 32px;
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+    }
+    .stat-box::after {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; background: var(--red-hot);
+    }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 52px; font-weight: 900; color: var(--white);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .stat-num span { color: var(--red-hot); }
+    .stat-label { font-size: 13px; color: var(--metal); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
+    .why-features { display: flex; flex-direction: column; gap: 24px; }
+    .feature-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 24px; background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05); border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .feature-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(230,57,70,0.2); }
+    .feature-icon-wrap {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 6px;
+    }
+    .feature-text { font-size: 14px; color: var(--metal); line-height: 1.6; }
+
+    /* GALLERY */
+    .gallery { background: var(--carbon); }
+    .gallery-header { margin-bottom: 56px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 4px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden;
+      background: var(--surface); min-height: 220px;
+      cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; min-height: 300px; }
+    .gallery-item:nth-child(4) { grid-column: span 2; min-height: 300px; }
+    .gallery-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 64px; background: var(--surface2);
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover .gallery-bg { transform: scale(1.06); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.35s ease;
+      display: flex; align-items: flex-end; padding: 24px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1px; color: white;
+    }
+    .gallery-label small { display: block; font-size: 12px; color: var(--red-hot); font-weight: 400; letter-spacing: 1px; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--black); }
+    .testimonials-header { text-align: center; margin-bottom: 56px; }
+    .testimonials-header .section-sub { margin: 16px auto 0; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .testi-card {
+      background: var(--carbon); border: 1px solid rgba(255,255,255,0.06);
+      padding: 36px; border-radius: 4px; position: relative;
+      transition: all 0.3s ease;
+    }
+    .testi-card::before {
+      content: '"'; position: absolute; top: 20px; right: 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 80px; color: rgba(230,57,70,0.12); line-height: 1;
+    }
+    .testi-card:hover { border-color: rgba(230,57,70,0.2); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .stars { display: flex; gap: 4px; margin-bottom: 20px; }
+    .star { color: #f59e0b; font-size: 16px; }
+    .testi-text { font-size: 15px; color: var(--silver); line-height: 1.75; font-weight: 300; margin-bottom: 28px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-mid), var(--red-hot));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px; font-weight: 800; color: white;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px; font-weight: 800; letter-spacing: 0.5px;
+    }
+    .testi-role { font-size: 12px; color: var(--metal); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative; overflow: hidden; padding: 100px 0;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(230,57,70,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.08), transparent 60%);
+    }
+    .cta-band-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 60px; flex-wrap: wrap;
+    }
+    .cta-band-text .section-title { font-size: clamp(32px, 4.5vw, 52px); }
+    .cta-band-actions { display: flex; flex-wrap: wrap; gap: 16px; flex-shrink: 0; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #25d366; color: white; padding: 16px 32px;
+      border-radius: 3px; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+    }
+    .btn-whatsapp:hover { background: #1ea855; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+
+    /* FOOTER */
+    footer { background: var(--carbon); border-top: 1px solid rgba(255,255,255,0.06); padding: 72px 0 40px; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px;
+      margin-bottom: 60px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 20px; display: inline-flex; }
+    .footer-desc { font-size: 14px; color: var(--metal); line-height: 1.75; max-width: 300px; }
+    .footer-phone-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--red-hot); font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px; font-weight: 800; text-decoration: none; margin-top: 20px;
+    }
+    .footer-h { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--silver); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: var(--metal); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-info p { color: var(--metal); font-size: 14px; line-height: 2; }
+    .footer-info strong { color: var(--silver); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { color: var(--metal); font-size: 13px; }
+    .footer-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 38px; height: 38px; border-radius: 4px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--metal); text-decoration: none; font-size: 16px;
+      transition: all 0.25s;
+    }
+    .social-btn:hover { background: rgba(230,57,70,0.15); border-color: rgba(230,57,70,0.3); color: var(--red-hot); }
+
+    /* WHATSAPP FLOAT */
+    .wa-float {
+      position: fixed; bottom: 32px; right: 32px; z-index: 900;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 36px rgba(37,211,102,0.6); }
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+    .wa-tooltip {
+      position: absolute; right: 72px; top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10,10,11,0.95); color: white;
+      font-size: 13px; font-weight: 500; padding: 8px 14px;
+      border-radius: 4px; white-space: nowrap; pointer-events: none;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* CONTACT FORM */
+    .contact { background: var(--carbon); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--metal); margin-bottom: 10px; }
+    .form-control {
+      width: 100%; background: var(--dark); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); padding: 14px 18px; border-radius: 3px; font-size: 15px;
+      font-family: 'Barlow', sans-serif; outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .form-control:focus { border-color: var(--red-hot); box-shadow: 0 0 0 3px rgba(230,57,70,0.12); }
+    .form-control::placeholder { color: var(--steel); }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+    select.form-control { cursor: pointer; }
+    option { background: var(--dark); }
+    .form-submit {
+      width: 100%; padding: 16px; background: var(--red-hot); color: white;
+      border: none; border-radius: 3px; font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 24px rgba(230,57,70,0.3);
+    }
+    .form-submit:hover { background: #c0392b; transform: translateY(-2px); }
+    .contact-info { padding-top: 12px; }
+    .contact-info-item {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .contact-info-icon {
+      width: 48px; height: 48px; border-radius: 6px; flex-shrink: 0;
+      background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 22px;
+    }
+    .contact-info-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--metal); margin-bottom: 6px; }
+    .contact-info-val { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .why-stats { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4) { grid-column: span 2; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: span 2; }
+      .cta-band-inner { flex-direction: column; text-align: center; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-h1 { letter-spacing: -1px; }
+      .section { padding: 72px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: span 1; }
+      .why-stats { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* DIVIDER */
+    .divider-line {
+      width: 60px; height: 3px; background: var(--red-hot);
+      margin: 20px 0; border-radius: 2px;
+    }
+    .divider-line.center { margin: 20px auto; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo">
+      <div class="nav-logo-icon">FS</div>
+      <div class="nav-logo-text">
+        Franky
+        <small>Soluciones</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="tel:88108590" class="nav-phone" style="display:flex; align-items:center; gap:8px;">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="color:#e63946"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      8810-8590
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
+  <a href="#galeria" onclick="closeMobile()">Galería</a>
+  <a href="#contacto" onclick="closeMobile()">Contacto</a>
+  <a href="tel:88108590" class="mob-cta">📞 Llamar: 8810-8590</a>
+  <a href="https://wa.me/50688108590" target="_blank" class="mob-cta" style="background:#25d366; margin-top:0;">💬 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow animate-fadeUp">Servicio profesional · Respuesta rápida</div>
+      <h1 class="hero-h1 animate-fadeUp delay-1">
+        Soluciones<br>
+        <span class="line2">Rápidas &amp;</span><br>
+        <span class="accent">Profesionales</span>
+      </h1>
+      <p class="hero-sub animate-fadeUp delay-2">
+        Electricidad, reparaciones, fontanería, pisos, remodelaciones y mantenimiento general para su hogar o negocio. Todo en un solo lugar.
+      </p>
+      <div class="hero-ctas animate-fadeUp delay-3">
+        <a href="#contacto" class="btn-primary">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Solicitar Cotización
+        </a>
+        <a href="tel:88108590" class="btn-outline">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Llamar Ahora
+        </a>
+      </div>
+      <div class="hero-badges animate-fadeUp delay-4">
+        <div class="badge">
+          <div class="badge-icon">⚡</div>
+          <span>Respuesta rápida</span>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">🛡️</div>
+          <span>Trabajos garantizados</span>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">🤝</div>
+          <span>Atención personalizada</span>
+        </div>
+        <div class="badge">
+          <div class="badge-icon">✅</div>
+          <span>Precios justos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="servicios">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="tag">Nuestros Servicios</div>
+      <h2 class="section-title">Lo que <span>hacemos</span></h2>
+      <div class="divider-line center"></div>
+      <p class="section-sub">Soluciones completas de mantenimiento, instalación y construcción para residencias y negocios.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01</span>
+        <div class="service-icon">⚡</div>
+        <div class="service-title">Instalaciones Eléctricas</div>
+        <p class="service-desc">Instalación y reparación de sistemas eléctricos, tableros, tomacorrientes, iluminación y más. Trabajo seguro y certificado.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">02</span>
+        <div class="service-icon">🔧</div>
+        <div class="service-title">Reparaciones Generales</div>
+        <p class="service-desc">Resolvemos cualquier problema de mantenimiento en su propiedad. Rápido, limpio y sin complicaciones.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">03</span>
+        <div class="service-icon">🔩</div>
+        <div class="service-title">Fontanería</div>
+        <p class="service-desc">Instalación y reparación de tuberías, llaves, sanitarios, duchas, sistemas de agua y desagüe.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">04</span>
+        <div class="service-icon">🏠</div>
+        <div class="service-title">Instalación de Pisos</div>
+        <p class="service-desc">Cerámica, porcelanato, vinilo, madera y más. Instalación precisa con acabado impecable.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">05</span>
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Remodelaciones</div>
+        <p class="service-desc">Transformamos espacios. Cocinas, baños, oficinas y más con diseño funcional y materiales de calidad.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">06</span>
+        <div class="service-icon">🎨</div>
+        <div class="service-title">Pintura</div>
+        <p class="service-desc">Pintura interior y exterior. Acabados profesionales que renuevan completamente cualquier ambiente.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">07</span>
+        <div class="service-icon">🔥</div>
+        <div class="service-title">Soldadura Básica</div>
+        <p class="service-desc">Trabajos de soldadura para portones, rejas, estructuras metálicas y reparaciones en general.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">08</span>
+        <div class="service-icon">🛠️</div>
+        <div class="service-title">Mantenimiento Preventivo</div>
+        <p class="service-desc">Evite costosas reparaciones futuras. Programas de mantenimiento para residencias y locales comerciales.</p>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-num">09</span>
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Instalaciones Varias</div>
+        <p class="service-desc">Aires acondicionados, muebles, estructuras, cielos rasos, divisiones y cualquier instalación que necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why" id="nosotros">
+  <div class="container">
+    <div class="why-grid">
+      <div class="reveal">
+        <div class="tag">¿Por qué elegirnos?</div>
+        <h2 class="section-title">Trabajo que<br><span>habla por sí solo</span></h2>
+        <div class="divider-line"></div>
+        <p class="section-sub">Más de 200 trabajos realizados con éxito respaldados por la satisfacción de cada cliente. Hacemos el trabajo bien desde la primera vez.</p>
+        <div class="why-stats" style="margin-top:40px;">
+          <div class="stat-box">
+            <div class="stat-num">+200<span>.</span></div>
+            <div class="stat-label">Trabajos realizados</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">24<span>h</span></div>
+            <div class="stat-label">Respuesta rápida</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">9<span>+</span></div>
+            <div class="stat-label">Servicios especializados</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100<span>%</span></div>
+            <div class="stat-label">Garantía de calidad</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-features reveal">
+        <div class="feature-item">
+          <div class="feature-icon-wrap">⚡</div>
+          <div>
+            <div class="feature-title">Atención Rápida</div>
+            <p class="feature-text">Nos desplazamos pronto para evaluar y resolver su problema sin hacerle esperar más de lo necesario.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">🎯</div>
+          <div>
+            <div class="feature-title">Experiencia Práctica</div>
+            <p class="feature-text">Años de experiencia en todo tipo de trabajos residenciales y comerciales. Sabemos lo que hacemos.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">✨</div>
+          <div>
+            <div class="feature-title">Trabajo Limpio</div>
+            <p class="feature-text">Llegamos, trabajamos con orden y nos vamos dejando todo limpio. Su espacio queda mejor que cuando llegamos.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">💰</div>
+          <div>
+            <div class="feature-title">Precios Justos</div>
+            <p class="feature-text">Cotizaciones transparentes sin sorpresas. Calidad profesional a precios accesibles y competitivos.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">🛡️</div>
+          <div>
+            <div class="feature-title">Garantía de Calidad</div>
+            <p class="feature-text">Respaldamos nuestro trabajo. Si algo no queda bien, volvemos y lo corregimos sin costo adicional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery" id="galeria">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="tag">Galería de trabajos</div>
+      <h2 class="section-title">Nuestros<br><span>proyectos</span></h2>
+      <div class="divider-line"></div>
+      <p class="section-sub">Una muestra de lo que hacemos. Cada proyecto refleja nuestro compromiso con la calidad y el detalle.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a2a4a,#0d1520); font-size:80px;">🏠</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Instalación de Pisos<small>Porcelanato premium</small></div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#2a1a1a,#1a0d0d);">⚡</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Sistema Eléctrico<small>Tablero residencial</small></div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a1a2a,#0d0d1a);">🚿</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Fontanería<small>Baño completo</small></div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a2a1a,#0d1a0d); font-size:80px;">🎨</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Pintura Interior<small>Acabado premium</small></div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#2a2a1a,#1a1a0d);">🔧</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Remodelación<small>Cocina residencial</small></div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="gallery-bg" style="background: linear-gradient(135deg,#1a1a1a,#2a1a2a);">🏗️</div>
+        <div class="gallery-overlay">
+          <div class="gallery-label">Construcción Ligera<small>División de espacios</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="tag">Lo que dicen nuestros clientes</div>
+      <h2 class="section-title">Experiencias<br><span>reales</span></h2>
+      <div class="divider-line center"></div>
+      <p class="section-sub">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Llamé por un problema eléctrico un viernes y Franky llegó esa misma tarde. Resolvió todo rápido, explicó lo que hizo y el precio fue muy razonable. Totalmente recomendado.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MA</div>
+          <div>
+            <div class="testi-name">María Ángeles R.</div>
+            <div class="testi-role">San José · Cliente residencial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Me instalaron los pisos de todo el segundo piso. El trabajo quedó perfecto, sin desperdicios, y la limpieza final fue impecable. Yo esperaba menos y quedé sorprendido.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CG</div>
+          <div>
+            <div class="testi-name">Carlos García M.</div>
+            <div class="testi-role">Heredia · Instalación de pisos</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Teníamos una tubería rota en el local y necesitábamos solución urgente. Franky llegó en menos de dos horas y lo dejó funcionando perfecto. Un profesional de verdad.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">LP</div>
+          <div>
+            <div class="testi-name">Laura Pérez V.</div>
+            <div class="testi-role">Cartago · Local comercial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Contraté para pintar mi apartamento completo. Puntual, ordenado y el resultado es increíble. Los colores quedaron perfectos y no dejó ni una mancha. Muy satisfecho.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RH</div>
+          <div>
+            <div class="testi-name">Roberto Herrera S.</div>
+            <div class="testi-role">Alajuela · Pintura residencial</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Hicimos una remodelación pequeña en la cocina y quedó como nueva. Honesto con los precios, cumple lo que promete y trabaja con mucho cuidado. Lo seguiré contratando.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SB</div>
+          <div>
+            <div class="testi-name">Sofía Benavides Q.</div>
+            <div class="testi-role">San José · Remodelación</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Excelente servicio de mantenimiento preventivo para nuestras oficinas. Profesional, puntual y el precio acordado es el precio final. Sin letra pequeña. 100% recomendado.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">José Molina A.</div>
+            <div class="testi-role">Escazú · Cliente empresarial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <div class="cta-band-text">
+        <div class="tag">¿Necesita ayuda?</div>
+        <h2 class="section-title">¿Tiene una reparación<br>o <span>instalación pendiente?</span></h2>
+        <p class="section-sub" style="margin-top:16px;">Contáctenos hoy mismo y reciba atención rápida, profesional y a un precio justo. Estamos listos para ayudarle.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="https://wa.me/50688108590" target="_blank" class="btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="tel:88108590" class="btn-primary">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          8810-8590
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section contact" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="tag">Contáctenos</div>
+        <h2 class="section-title">Solicite su<br><span>cotización</span></h2>
+        <div class="divider-line"></div>
+        <p class="section-sub">Déjenos sus datos y nos ponemos en contacto a la brevedad. Sin compromisos, respuesta rápida.</p>
+        <div class="contact-info" style="margin-top:40px;">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <div class="contact-info-label">Teléfono / WhatsApp</div>
+              <div class="contact-info-val"><a href="tel:88108590" style="color:inherit;text-decoration:none;">8810-8590</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div>
+              <div class="contact-info-label">Horario de atención</div>
+              <div class="contact-info-val">Lun – Sáb: 7:00 AM – 7:00 PM</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <div class="contact-info-label">Área de cobertura</div>
+              <div class="contact-info-val">Gran Área Metropolitana</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Su nombre" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" class="form-control" placeholder="Ej: 8800-0000" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="servicio">Servicio que necesita</label>
+            <select id="servicio" class="form-control" required>
+              <option value="" disabled selected>Seleccione un servicio</option>
+              <option>Instalaciones eléctricas</option>
+              <option>Reparaciones generales</option>
+              <option>Fontanería</option>
+              <option>Instalación de pisos</option>
+              <option>Remodelaciones</option>
+              <option>Pintura</option>
+              <option>Soldadura básica</option>
+              <option>Mantenimiento preventivo</option>
+              <option>Instalaciones varias</option>
+              <option>Varios servicios</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="mensaje">Descripción del trabajo</label>
+            <textarea id="mensaje" class="form-control" placeholder="Cuéntenos qué necesita..." rows="4"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar por WhatsApp</button>
+        </form>
+        <p id="formMsg" style="display:none; margin-top:16px; color:#25d366; font-size:14px; text-align:center;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="nav-logo">
+          <div class="nav-logo-icon">FS</div>
+          <div class="nav-logo-text">
+            Franky Soluciones
+            <small>Servicios profesionales</small>
+          </div>
+        </a>
+        <p class="footer-desc" style="margin-top:16px;">Empresa de servicios generales especializada en electricidad, fontanería, pisos, remodelaciones y mantenimiento. Calidad y confianza en cada trabajo.</p>
+        <a href="tel:88108590" class="footer-phone-link">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          8810-8590
+        </a>
+      </div>
+      <div>
+        <div class="footer-h">Servicios</div>
+        <ul class="footer-links">
+          <li><a href="#servicios">Electricidad</a></li>
+          <li><a href="#servicios">Fontanería</a></li>
+          <li><a href="#servicios">Pisos</a></li>
+          <li><a href="#servicios">Remodelaciones</a></li>
+          <li><a href="#servicios">Pintura</a></li>
+          <li><a href="#servicios">Soldadura</a></li>
+          <li><a href="#servicios">Mantenimiento</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Empresa</div>
+        <ul class="footer-links">
+          <li><a href="#nosotros">¿Quiénes somos?</a></li>
+          <li><a href="#nosotros">¿Por qué elegirnos?</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Cotización gratis</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <div class="footer-h">Información</div>
+        <p><strong>Horario:</strong><br>Lun – Sáb: 7am – 7pm</p>
+        <p style="margin-top:14px;"><strong>Cobertura:</strong><br>Gran Área Metropolitana,<br>Costa Rica</p>
+        <p style="margin-top:14px;"><strong>WhatsApp:</strong><br><a href="https://wa.me/50688108590" style="color:var(--red-hot); text-decoration:none;">+506 8810-8590</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Franky Soluciones. Todos los derechos reservados.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/50688108590" target="_blank" class="social-btn" title="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="tel:88108590" class="social-btn" title="Llamar">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/50688108590" target="_blank" class="wa-float" title="Chatear por WhatsApp">
+  <div class="wa-tooltip">¡Escríbanos ahora!</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // NAV SCROLL
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // HAMBURGER
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  function closeMobile() {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  }
+
+  // SCROLL REVEAL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // CONTACT FORM → WhatsApp
+  function handleSubmit(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const telefono = document.getElementById('telefono').value;
+    const servicio = document.getElementById('servicio').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const text = encodeURIComponent(
+      `Hola Franky Soluciones! 👋\n\n` +
+      `*Nombre:* ${nombre}\n` +
+      `*Teléfono:* ${telefono}\n` +
+      `*Servicio:* ${servicio}\n` +
+      `*Descripción:* ${mensaje || 'Sin descripción adicional'}\n\n` +
+      `Me gustaría solicitar una cotización. ¡Gracias!`
+    );
+
+    window.open(`https://wa.me/50688108590?text=${text}`, '_blank');
+
+    const msg = document.getElementById('formMsg');
+    msg.textContent = '✅ Abriendo WhatsApp... ¡Nos comunicaremos pronto!';
+    msg.style.display = 'block';
+    e.target.reset();
+    setTimeout(() => msg.style.display = 'none', 5000);
+  }
+</script>
+</body>
+</html>
