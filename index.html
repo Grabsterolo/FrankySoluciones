@@ -486,42 +486,6 @@
     }
     .feature-text { font-size: 14px; color: var(--metal); line-height: 1.6; }
 
-    /* GALLERY */
-    .gallery { background: var(--dark); }
-    .gallery-header { margin-bottom: 56px; }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
-      gap: 4px;
-    }
-    .gallery-item {
-      position: relative; overflow: hidden;
-      background: var(--surface); min-height: 220px;
-      cursor: pointer;
-    }
-    .gallery-item:nth-child(1) { grid-column: span 2; min-height: 300px; }
-    .gallery-item:nth-child(4) { grid-column: span 2; min-height: 300px; }
-    .gallery-bg {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      transition: transform 0.5s ease;
-    }
-    .gallery-item:hover .gallery-bg { transform: scale(1.06); }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
-      opacity: 1; transition: opacity 0.35s ease;
-      display: flex; align-items: flex-end; padding: 24px;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
-    .gallery-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 20px; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 1px; color: white;
-    }
-    .gallery-label small { display: block; font-size: 12px; color: var(--red-hot); font-weight: 400; letter-spacing: 1px; }
-
     /* TESTIMONIALS */
     .testimonials { background: var(--black); }
     .testimonials-header { text-align: center; margin-bottom: 56px; }
@@ -774,7 +738,6 @@
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#galeria">Galería</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="tel:88108590" class="nav-phone" style="display:flex; align-items:center; gap:8px;">
@@ -791,7 +754,6 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#servicios" onclick="closeMobile()">Servicios</a>
   <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
-  <a href="#galeria" onclick="closeMobile()">Galería</a>
   <a href="#contacto" onclick="closeMobile()">Contacto</a>
   <a href="tel:88108590" class="mob-cta">Llamar: 8810-8590</a>
   <a href="https://wa.me/50688108590" target="_blank" class="mob-cta" style="background:#25d366; margin-top:0;">WhatsApp</a>
@@ -1022,56 +984,6 @@
             <div class="feature-title">Garantía de Calidad</div>
             <p class="feature-text">Respaldamos nuestro trabajo. Si algo no queda bien, volvemos y lo corregimos sin costo adicional.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="section gallery" id="galeria">
-  <div class="container">
-    <div class="gallery-header reveal">
-      <div class="tag">Galería de trabajos</div>
-      <h2 class="section-title">Nuestros<br><span>proyectos</span></h2>
-      <div class="divider-line"></div>
-      <p class="section-sub">Una muestra de lo que hacemos. Cada proyecto refleja nuestro compromiso con la calidad y el detalle.</p>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-electricidad.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Instalaciones Eléctricas<small>Tableros · Tomacorrientes · Iluminación</small></div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-fontaneria.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Fontanería<small>Tuberías · Sanitarios · Sistemas de agua</small></div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-pisos.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Instalación de Pisos<small>Cerámica · Porcelanato · Vinilo</small></div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-pintura.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Pintura<small>Interior · Exterior · Acabado profesional</small></div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-remodelacion.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Remodelaciones<small>Cocinas · Baños · Oficinas</small></div>
-        </div>
-      </div>
-      <div class="gallery-item reveal">
-        <div class="gallery-bg" style="background-image: url('img/galeria-reparaciones.svg'); background-size: cover; background-position: center;"></div>
-        <div class="gallery-overlay">
-          <div class="gallery-label">Reparaciones Generales<small>Rápido · Limpio · Garantizado</small></div>
         </div>
       </div>
     </div>
@@ -1342,7 +1254,6 @@
         <ul class="footer-links">
           <li><a href="#nosotros">¿Quiénes somos?</a></li>
           <li><a href="#nosotros">¿Por qué elegirnos?</a></li>
-          <li><a href="#galeria">Galería</a></li>
           <li><a href="#contacto">Cotización gratis</a></li>
         </ul>
       </div>
