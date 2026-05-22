@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;800;900&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Icon badge -->
+  <rect x="0" y="12" width="56" height="56" rx="12" fill="#e8431a"/>
+  <text x="28" y="50" font-family="'Barlow Condensed', Arial Black, Arial, sans-serif"
+        font-size="28" font-weight="900" fill="#ffffff"
+        text-anchor="middle" letter-spacing="-1">FS</text>
+
+  <!-- Brand name -->
+  <text x="76" y="42" font-family="'Barlow Condensed', Arial Black, Arial, sans-serif"
+        font-size="28" font-weight="800" fill="#ffffff"
+        text-anchor="start" letter-spacing="0.5">Franky Soluciones</text>
+
+  <!-- Tagline -->
+  <text x="77" y="60" font-family="'Barlow Condensed', Arial Black, Arial, sans-serif"
+        font-size="13" font-weight="400" fill="#888ea6"
+        text-anchor="start" letter-spacing="2">SERVICIOS PROFESIONALES</text>
+</svg>
