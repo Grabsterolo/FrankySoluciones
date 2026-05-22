@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 270">
+
+  <!-- F + House mark only (no text) — for nav/favicon use -->
+  <g fill="none" stroke="rgba(175,175,175,0.88)" stroke-width="3" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M 28,18 L 248,18 L 226,56 L 68,56 L 68,102 L 192,102 L 170,140 L 68,140 L 68,222 L 28,222 Z"/>
+    <line x1="28"  y1="248" x2="150" y2="173"/>
+    <line x1="272" y1="248" x2="150" y2="173"/>
+    <line x1="28"  y1="248" x2="272" y2="248"/>
+  </g>
+
+  <!-- 4 red squares at peak -->
+  <rect x="138" y="160" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="151" y="160" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="138" y="173" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="151" y="173" width="11" height="11" rx="1.5" fill="#e8431a"/>
+
+</svg>

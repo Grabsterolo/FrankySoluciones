@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 490">
+
+  <!-- F + House icon mark -->
+  <g fill="none" stroke="rgba(170,170,170,0.85)" stroke-width="2.6" stroke-linejoin="miter" stroke-linecap="square">
+
+    <!-- F letter as unified outline path -->
+    <!-- Vertical bar L=75, R=115; top bar to x=315; middle bar to x=248 -->
+    <!-- Diagonal cut style on right ends (same angle as original) -->
+    <path d="
+      M 75,28
+      L 315,28
+      L 291,70
+      L 115,70
+      L 115,122
+      L 248,122
+      L 224,163
+      L 115,163
+      L 115,250
+      L 75,250
+      Z
+    "/>
+
+    <!-- House chevron — two legs meeting at the peak -->
+    <line x1="75"  y1="280" x2="200" y2="202"/>
+    <line x1="325" y1="280" x2="200" y2="202"/>
+
+    <!-- Base of house (horizontal bottom line connecting the feet) -->
+    <line x1="75"  y1="280" x2="325" y2="280"/>
+
+  </g>
+
+  <!-- 4 red squares at peak (2×2 grid, 11px each, 2px gap) -->
+  <rect x="188" y="189" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="201" y="189" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="188" y="202" width="11" height="11" rx="1.5" fill="#e8431a"/>
+  <rect x="201" y="202" width="11" height="11" rx="1.5" fill="#e8431a"/>
+
+  <!-- FRANKY — large outlined text -->
+  <text
+    x="200" y="370"
+    text-anchor="middle"
+    font-family="'Barlow Condensed', 'Arial Black', Arial, sans-serif"
+    font-size="96" font-weight="800"
+    fill="none"
+    stroke="rgba(195,195,195,0.9)"
+    stroke-width="1.6"
+    letter-spacing="4">FRANKY</text>
+
+  <!-- Decorative left dash -->
+  <line x1="40"  y1="408" x2="88"  y2="408" stroke="#e8431a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- SOLUCIONES -->
+  <text
+    x="200" y="416"
+    text-anchor="middle"
+    font-family="'Barlow Condensed', 'Arial Black', Arial, sans-serif"
+    font-size="20" font-weight="400"
+    fill="rgba(150,150,150,0.9)"
+    letter-spacing="7">SOLUCIONES</text>
+
+  <!-- Decorative right dash -->
+  <line x1="312" y1="408" x2="360" y2="408" stroke="#e8431a" stroke-width="2" stroke-linecap="round"/>
+
+</svg>
